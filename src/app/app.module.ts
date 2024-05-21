@@ -17,6 +17,7 @@ const appRouter: Routes = [
 // Suggested code may be subject to a license. Learn more: ~LicenseLog:392407973.
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'user/:id', component: UserComponent },
   { path: 'servers', component: ServerComponent },
 ]
 

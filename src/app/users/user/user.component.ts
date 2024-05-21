@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -8,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
   user: {id: number, name: string};
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
+    this.user = this.userService.getUserById(this.route.snapshot.params['id'])
   }
 
 }
